@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossy Touch - Modern Glass Design Experience</title>
+    
+    <link rel="stylesheet" href="templatemo-glossy-touch.css">
+<!--
+
+TemplateMo 592 glossy touch
+
+https://templatemo.com/tm-592-glossy-touch
+
+-->
+    <style>
+        
+    </style>
+</head>
+
+    <style>
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 183, 255, 0.2);
+            border-radius: 50%;
+            animation: floatShape 15s infinite ease-in-out;
+        }
+
+        @keyframes floatShape {
+            0%   { transform: translate(0, 0) scale(1);   opacity: 0.8; }
+            25%  { transform: translate(30px, -40px) scale(1.2); opacity: 0.5; }
+            50%  { transform: translate(-20px, 60px) scale(0.9); opacity: 0.6; }
+            75%  { transform: translate(50px, 30px) scale(1.1); opacity: 0.7; }
+            100% { transform: translate(0, 0) scale(1);   opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+
+<body>
+    <div class="bg-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- SINGLE NAVIGATION HEADER -->
+<header>
+  <div class="container">
+    <nav class="glass">
+      <div class="logo" onclick="showPage('home')">
+        <div class="logo-icon">
+          <div class="logo">
+            <img style="width: 100%; border-radius: 0px;" src="Amara Logo.png" alt="Amara Customs Logo" />
+          </div>
+        </div>
+        <span>Amara Customs</span>
+      </div>
+      <div class="hamburger" onclick="toggleSidebar()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="nav-links">
+        <a href="#" onclick="showPage('home')" class="active"><b>Home</b></a>
+        <a href="#" onclick="showPage('designs')"><b>Designs</b></a>
+        <a href="#" onclick="showPage('services')"><b>Services</b></a>
+        <a href="#" onclick="showPage('contact')"><b>Contact</b></a>
+      </div>
+    </nav>
+  </div>
+<div id="sidebar" class="glass sidebar hidden">
+  <div class="close-btn" onclick="toggleSidebar()">&times;</div>
+  <a href="#" onclick="showPage('home'); toggleSidebar();"><b>Home</b></a>
+  <a href="#" onclick="showPage('designs'); toggleSidebar();"><b>Designs</b></a>
+  <a href="#" onclick="showPage('services'); toggleSidebar();"><b>Services</b></a>
+  <a href="#" onclick="showPage('contact'); toggleSidebar();"><b>Contact</b></a>
+</div>
+</header>
+
+<style>
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10001;
+  }
+
+  .hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+  }
+.nav-links a:hover,
+.nav-links a.active {
+  color: black; 
+  background: #FFD700; /* Highlight on hover and active link */
+}
+
+ .sidebar {
+    position: fixed;
+    top: 70px;
+    left: -260px;
+    width: 250px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(18px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+    transition: left 0.4s ease;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    gap: 25px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+.sidebar a:hover {
+  background: #FFD700; /* Highlight on hover */
+  color: black;
+  transform: translateX(5px);
+  }
+
+  .sidebar a.active {
+  background: #FFD700; /* Bright yellow */
+  color: black;        /* High contrast text */
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+
+.sidebar.hidden {
+  display: none;
+}
+
+.sidebar.active {
+  left: 0;
+    transition: left 0.4s ease;
+}
+
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+
+    if (sidebar.classList.contains('active')) {
+        // Start closing
+        sidebar.classList.remove('active');
+        setTimeout(() => {
+            sidebar.classList.add('hidden');
+        }, 400); // Wait for transition to complete
+    } else {
+        // Open sidebar
+        sidebar.classList.remove('hidden');
+        setTimeout(() => {
+            sidebar.classList.add('active');
+        }, 10); // Slight delay to allow for transition
+    }
+}
+</script>
+
+
+
+
+    <!-- HOME PAGE -->
+
+    <div id="home" class="page active">
+ <div>
+        <img style="width: 100%;" src="Banner.GIF" alt="Banner">
+    </div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Banner</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            gap: 40px;
+            flex-wrap: wrap;  /* Allow wrapping to fit content on mobile */
+            overflow: hidden;
+        }
+
+        .left-content {
+            flex: 1 1 45%; /* This makes the left side flexible */
+            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .left-content h1 {
+            font-size: 2.5vw;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .left-content p {
+            font-size: 1.2vw;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .left-content .button {
+            background-color: #ffcc00;
+            padding: 15px 30px;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .left-content .button:hover {
+            background-color: #ff9900;
+        }
+
+        .right-content {
+            flex: 1 1 45%; /* This makes the right side flexible */
+            display: flex;
+            justify-content: center;
+        }
+
+        .right-content img {
+            max-width: 60%;
+   
+            border-radius: 12px;
+            margin-left: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5vw;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .hero .feature-card {
+            background: linear-gradient(to right, #f49b10, #ff69b4);
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .banner {
+                flex-direction: column;
+                gap: 20px;
+                padding: 10px; /* Adjust padding for mobile */
+            }
+
+            .left-content, .right-content {
+                flex: 1 1 100%; /* Stacks content on mobile */
+                margin: 0;
+            }
+
+            .left-content h1 {
+                font-size: 5vw; /* Responsive heading font size */
+            }
+
+            .left-content p {
+                font-size: 3vw; /* Responsive paragraph font size */
+            }
+
+            .feature-card h3 {
+                font-size: 4vw; /* Responsive feature card font size */
+            }
+
+            .right-content img {
+                max-width: 90%;
+                margin-top: 20px; /* Added margin for spacing */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="content-wrapper">
+    <section class="hero glass">
+       
+            <div class="left-content">
+                <div class="feature-card">
+                    <h3>Enhance customer experiences with custom bottles, a perfect touch for Hotels and Restaurants.</h3>
+                </div>
+                <div class="feature-card">
+                    <h3>Customised bottles makes your wedding and parties unforgettable for every guest.</h3>
+                </div>
+                <div class="feature-card">
+                    <h3>Promote your Showroom with unique, branded water bottles for every visitor.</h3>
+                </div>
+                <div class="feature-card">
+                    <h3>Custom bottles are a powerful, cost-effective corporate branding tool.</h3>
+                </div>
+            </div>
+            <div class="right-content">
+                <!-- Ensure the correct path to your image -->
+                <img src="Empty Bottle.png" alt="Branded Water Bottle">
+            </div>
+        
+    </section>
+</div>
+
+</body>
+</html>
+
+
+<br>
+
+<div style="text-align: center; font-size: 30px;color: white; margin: 20px 0;">
+  <h2>Start Your Customisation</h2>
+  <a href="https://wa.me/917029637066?text=I'm%20interested%20to%20Customise%20my%20Bottle" target="_blank" style="display: inline-block; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold;">
+    Chat on WhatsApp
+  </a>
+</div>
+<br>
+<br>
+
+        <div class="container">
+            <div class="content-wrapper">
+                <section class="hero glass">
+<h2 style="font-size: 60px; color: white; text-align: center;">Featured Products</h2>
+                    <div class="hero-image">
+                    </div>
+                    <div class="hero-content">
+                    </div>
+                </section>
+
+
+
+ <style>
+        body {
+            font-family: 'Poppinst', sans-serif;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            text-align: center;
+            margin-top: 20px;
+            gap: 20px; /* Adds space between images */
+            flex-wrap: wrap;
+        }
+
+        .product > div {
+            flex: 1;
+            max-width: 250spx;
+        }
+
+        .product img {
+            width: 100%;
+            aspect-ratio: 2 / 3; 
+            object-fit: cover;   
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(4, 5, 0, 0.1); 
+        }
+
+        .product p {
+            font-size: 25px;
+            margin-top: 12px;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+</head>
+</body>
+
+<div class="product">
+    
+    <div>
+        <img src="250ml.png" alt="250ml Bottle">
+<h1 style="color: cyan;">250ml</h1>
+        <p style="color: white;">₹270/Box<br>(30pcs)</p>
+    </div>
+
+    <div>
+        <img src="500ml.png" alt="500ml Bottle">
+<h1 style="color: cyan;">500ml</h1>
+        <p style="color: white;">₹240/Box<br>(24pcs)</p>
+    </div>
+
+    <div>
+        <img src="1L.png" alt="1L Bottle">
+<h1 style="color: cyan;">1 Litre</h1>
+        <p style="color: white;">₹190/Box<br>(12pcs)</p>
+    </div>
+
+</div>
+
+<br>
+<br>
+
+        <div class="container">
+            <div class="content-wrapper">
+                <section class="hero glass">
+<h2 style="font-size: 60px; color: white; text-align: left;">Designing Process</h2>
+                    <div class="hero-image">
+
+
+                    </div>
+                    <div class="hero-content">
+                    </div>
+                </section>
+                    </div>
+                    <div class="hero-content">   
+                    </div>
+                </section>
+
+
+                <section class="features">
+                    <div class="feature-card glass">
+                        <div class="feature-icon">💭</div>
+                        <h3 style="color: #FFCC99;">Brand Understanding</h3>
+                        <p>We begin by understanding your brand, event type, and audience to align the design with your identity.</p>
+                    </div>
+                    
+                    <div class="feature-card glass">
+                        <div class="feature-icon">💻</div>
+                        <h3 style="color: #FFCC99;">Design Customisation</h3>
+                        <p>Choose bottle size, label style, logo, colours, and fonts—tailored to match your brand perfectly.</p>
+                    </div>
+                    
+                    <div class="feature-card glass">
+                        <div class="feature-icon">📃</div>
+                        <h3 style="color: #FFCC99;">Sample Review & Approval</h3>
+                        <p>Get a digital preview of the label. Approve or request changes before we move to production.</p>
+                    </div>
+
+                    <div class="feature-card glass">
+                        <div class="feature-icon">💧</div>
+                        <h3 style="color: #FFCC99;">Quality Production</h3>
+                        <p>Your bottles are produced using high-quality, food-grade materials with strict quality checks.</p>
+                    </div>
+
+                    <div class="feature-card glass">
+                        <div class="feature-icon">🚚</div>
+                        <h3 style="color: #FFCC99;">Hassle-Free Delivery</h3>
+                        <p>We deliver on time—whether for events or regular supply—ensuring safe and efficient logistics.</p>
+                    </div>
+
+                    <div class="feature-card glass">
+                        <div class="feature-icon">🚀</div>
+                        <h3 style="color: #FFCC99;">After-Support</h3>
+                        <p>Easily reorder or update designs. We offer quick assistance and save your past preferences.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div class="container">
+            <div class="content-wrapper">
+                <section class="about-content">
+                    <div class="about-text glass">
+                        <h2>About Our Vision</h2>
+                        <p>We believe in creating digital experiences that feel natural and intuitive. Our glass morphism design philosophy combines transparency, depth, and subtle animations to create interfaces that users love to interact with.</p>
+                        <p>Founded in 2024, our team of designers and developers are passionate about pushing the boundaries of web design while maintaining accessibility and performance standards.</p>
+                        <p>Every project we undertake is crafted with attention to detail, ensuring that form follows function while never compromising on aesthetic beauty.</p>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-card glass">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card glass">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-card glass">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card glass">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                    </div>
+                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- DESIGNS PAGE -->
+<div id="designs" class="page">
+    <div class="designs-container">
+        <h1 style="color: white;">Our Bottle Designs</h1> <br>
+
+<div class="design-filters">
+  <button onclick="filterDesigns('all')" class="active">All</button>
+  <button onclick="filterDesigns('restaurants')">Restaurants</button>
+  <button onclick="filterDesigns('weddings')">Weddings</button>
+  <button onclick="filterDesigns('corporates')">Corporates</button>
+  <button onclick="filterDesigns('events')">Events</button>
+  <button onclick="filterDesigns('birthdays')">Birthdays</button>
+  <button onclick="filterDesigns('showrooms')">Showrooms</button>
+</div>
+
+<style>
+.design-filters {
+  display: flex;                /* ✅ Makes it row-wise */
+  justify-content: center;      /* ✅ Centers the row */
+  flex-wrap: wrap;              /* ✅ Wraps to next line on small screens */
+  gap: 10px;                    /* ✅ Adds spacing between buttons */
+  margin-bottom: 20px;
+}
+
+.design-filters button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.design-filters button:hover,
+.design-filters button.active {
+  background-color: #00b7ff;
+}
+
+    .design-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .design-gallery > div {
+        width: 250px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .design-gallery > div:hover {
+        transform: translateY(-5px);
+    }
+
+    .design-gallery img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        aspect-ratio: 2 / 3;
+    }
+
+    .design-gallery p {
+        color: white;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+</style>
+
+  
+<div class="design-gallery">
+            <div class="design-item" data-category="showrooms">
+                <img src="250ml.png" alt="250ml Bottle">
+                <p style="color: white;">Hero Showroom</p>
+            </div>
+
+            <div class="design-item" data-category="restaurants">
+                <img src="500ml.png" alt="500ml Bottle">
+                <p style="color: white;">Abishek Momo</p>
+            </div>
+
+            <div class="design-item" data-category="restaurants">
+                <img src="1L.png" alt="1L Bottle">
+                <p style="color: white;">Moghal Empire</p>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+
+    
+    <!-- SERVICES PAGE -->
+
+
+<style>
+        /* Your existing styles here... */
+
+.service-icon {
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 24px;
+    color: #000000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Icon Backgrounds */
+.service-icon.icon1 {background-color: blue;} /* Aqua Blue */
+.service-icon.icon2 {background-color: green;} /* Light Orange */
+.service-icon.icon3 {background-color: beige;} /* Mint Green */
+.service-icon.icon4 {background-color: purple;} /* Lavender */
+.service-icon.icon5 {background-color: Pink;} /* Pink */
+.service-icon.icon6 {background-color: Cyan;} /* Sky Blue */
+
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+    </style>
+
+
+
+
+    <div id="services" class="page">
+        <div class="container">
+            <div class="content-wrapper">
+                <section class="hero glass">
+                    <h1>Our Services</h1>
+                    <p style="text-align: justify;"> <b>We provide Customised Drinking Water for every Businesses & Occassions– Whether it's Hotels, Restaurants, Cafes, Gyms, Weddings, Showrooms, Corporate Events,  Birthdays, etc.</b></p>
+                </section>
+
+                <section class="services-grid">
+                    <div class="service-card glass">
+                        <div class="service-header">
+                            <img style="width: 10%; margin-right: 15px; border-radius: 0px;" src="Bottle.png" alt="Instagram Logo" />
+                            <h3>Custom Bottle Designs</h3>
+                        </div>
+                        <p>Get bottles designed with your brand name, logo, or event theme just the way you want.</p>
+                        <ul class="service-features">
+                            <li>Brand Logo</li>
+                            <li>Image Integration</li>
+                            <li>Gradient Background</li>
+                            <li>QR Code Integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card glass">
+                        <div class="service-header">
+                            <img style="width: 20%; margin-right: 15px; border-radius: 0px;" src="Size.png" alt="Instagram Logo" />
+                            <h3>Flexible Bottle Sizes </h3>
+                        </div>
+                        <p>Choose from 250ml, 500ml & 1L which is perfect for any need or occasion.</p>
+                        <ul class="service-features">
+                            <li>250ml</li>
+                            <li>500ml</li>
+                            <li>1 Litre</li>
+                            <li>Custom Sizes</li>
+                        </ul>
+                    </div>
+
+                    
+                    <div class="service-card glass">
+                        <div class="service-header">
+                            <img style="width: 20%; margin-right: 15px; border-radius: 0px;" src="Settings.png" alt="Instagram Logo" />
+                            <h3>Easy Customisation</h3>
+                        </div>
+                        <p>Customising your water bottles is quick and simple with our step-by-step support system.</p>
+                        <ul class="service-features">
+                            <li>DM us on Whatsapp</li>
+                            <li>Explain us your requirement</li>
+                            <li>We'll start designing</li>
+                            <li>Verify your Design</li>
+                        </ul>
+                    </div>
+
+<div class="service-card glass">
+                        <div class="service-header">
+                            <img style="width: 14%; margin-right: 24px; border-radius: 0px;" src="Water drop.png" alt="Instagram Logo" />
+                            <h3>Pure Quality Water</h3>
+                        </div>
+                        <p>Enjoy safe, clean, Alkaline water that meets the highest quality and hygiene standards.</p>
+                        <ul class="service-features">
+                            <li>Alkaline in Nature</li>
+                            <li>pH Value: 8</li>
+                            <li>TDS: 100-150 only</li>
+                            <li>12 months shelf-life</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card glass">
+                        <div class="service-header">
+                            <img style="width: 20%; margin-right: 24px; border-radius: 0px;" src="Birthday Cap.png" alt="Instagram Logo" />
+                            <h3>Fits Every Occasion</h3>
+                        </div>
+                        <p>Ideal for weddings, corporates, restaurants, or birthdays – we serve all events and businesses.</p>
+                        <ul class="service-features">
+                            <li>Marriage, Birthday, Aiburobhaat</li>
+                            <li>Restaurant, Cafe, Hotel, Resort</li>
+                            <li>NGO, GYMS, College</li>
+                            <li>Corporate Offices & MNCs</li>
+                            <li>Showrooms, Hospitals, Travel Agencies</li>
+                            <li>Government Events/Campaigns</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card glass">
+                        <div class="service-header">
+                            <img style="width: 16%; margin-right: 24px; border-radius: 0px;" src="Whatsapp Logo.png" alt="Instagram Logo" />
+                            <h3>24/7 Support</h3>
+                        </div>
+                        <p>Have questions or urgent needs? Our team is always available to assist you anytime.</p>
+                        <ul class="service-features">
+                            <li>Languages: Hindi, Bengali & English</li>
+                            <li>Whatsapp support</li>
+                            <li>Call support</li>
+                            <li>E-mail support</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+            <div class="content-wrapper">
+                    <div class="contact-form glass">
+                  
+<div style="display: none; pointer-events: none; visibility: hidden; height: 0; overflow: hidden;">
+<form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+  <input type="hidden" name="access_key" value="3f2eee79-9269-471c-9ac4-1448db0005e4" />
+  <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+  <input type="hidden" name="from_name" value="My Website" />
+
+  <div class="form-group-container">
+    <div class="form-group">
+      <label for="name" class="form-label">Name</label>
+      <input name="name" class="form-input" placeholder="Enter your full name" type="text" required />
+    </div>
+    <div class="form-group">
+      <label for="email" class="form-label">Email Address</label>
+      <input name="email" class="form-input" placeholder="Enter your email" type="email" required />
+    </div>
+    <div class="form-group">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input name="phone" class="form-input" placeholder="Enter your phone number" type="text" required />
+    </div>
+    <div class="form-group">
+      <label for="subject" class="form-label">Your Requirement</label>
+      <input name="subject" class="form-input" placeholder="What's this about?" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="message" class="form-label">Message</label>
+      <textarea name="message" class="form-textarea" placeholder="Tell us about your project" required></textarea>
+    </div>
+  </div>
+
+  <button type="submit" class="cta-button">Send Message</button>
+</form>
+                    </div>
+
+
+
+
+                    
+                        <h2>Contact Information</h2>
+                        
+                        <div class="contact-item">
+                            <img style="width: 8%; margin-right: 18px; border-radius: 0px;" src="Instagram Logo.png" alt="Instagram Logo" />
+                            <div class="contact-item-text">
+                                <h4>Instagram</h4>
+                                <p>@amarawaterofficial</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <img style="width: 8%; margin-right: 18px; border-radius: 0px;" src="Facebook Logo.png" alt="Instagram Logo" />
+                            <div class="contact-item-text">
+                                <h4>Facebook Page</h4>
+                                <p>Amara Official</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                           <img style="width: 8%; margin-right: 18px; border-radius: 0px;" src="Mail Logo.png" alt="Instagram Logo" />
+                            <div class="contact-item-text">
+                                <h4>Email</h4>
+                                <p>amarawaterofficial@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <img style="width: 7%; margin-right: 24px; border-radius: 0px;" src="Whatsapp Logo.png" alt="Instagram Logo" />
+                            <div class="contact-item-text">
+                                <h4>Phone</h4>
+                                <p>+91 8100123040</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <img style="width: 8%; margin-right: 18px; border-radius: 0px;" src="Location Logo.png" alt="Instagram Logo" />
+                            <div class="contact-item-text">
+                                <h4>Address</h4>
+                                <p>Mourigram Station Rd, Andul<br>Howrah, West Bengal, 711302</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <img style="width: 8%; margin-right: 18px; border-radius: 0px;" src="Office Logo.png" alt="Instagram Logo" />
+                            <div class="contact-item-text">
+                                <h4>Business Hours</h4>
+                                <p>Mon-Fri: 9AM-6PM<br>Sat-Sun: 10AM-4PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+<style>
+.contact-form {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 700px;
+    margin: 40px auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #f5f5f5;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #00d1ff;
+    box-shadow: 0 0 12px rgba(0, 209, 255, 0.4);
+}
+
+.cta-button {
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(135deg, #00d1ff, #0048ff);
+    color: white;
+    font-weight: 600;
+    padding: 18px 0;
+    border: none;
+    border-radius: 14px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(0, 209, 255, 0.3);
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #0048ff, #00d1ff);
+    box-shadow: 0 6px 30px rgba(0, 209, 255, 0.5);
+}
+</style>
+ 
+
+
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="access_key" value="3f2eee79-9269-471c-9ac4-1448db0005e4" />
+    <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+    <input type="hidden" name="from_name" value="My Website" />
+    <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+      <h2 style="color: white; align: left;">Get in Touch</h2>
+    <div class="form-group-container">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" name="name" class="form-input" placeholder="Enter your full name" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email Address</label>
+        <input id="email" name="email" class="form-input" placeholder=" Enter your email" type="email" />
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input id="phone" name="phone" class="form-input" placeholder="Enter your phone number" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="subject" class="form-label">Your Requirement</label>
+        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your project"></textarea>
+      </div>
+    </div>
+    
+     <button type="submit" class="cta-button">Send Message</button>
+  </form>
+
+</section>
+
+
+<style>
+.contact-map-section {
+    margin: 60px auto;
+    max-width: 700px;
+    padding: 40px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.08));
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.contact-map-section h2 {
+    font-size: 34px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.map-placeholder {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-placeholder p {
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.map-placeholder-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.map-placeholder iframe {
+    margin-top: 20px;
+    border-radius: 14px;
+    width: 100%;
+    height: 450px;
+    box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
+    border: none;
+}
+</style>
+
+
+                <section class="contact-map-section">                  
+                            <div class="map-placeholder">
+                                <h2>Find Us</h2>
+                                <div class="map-placeholder-icon">🗺️</div>
+                                <p><strong>Map Area</strong></p>
+                                <p>Mourigram Station Rd</p>
+                                <p>Andul, Howrah, West Bengal, 711302</p>
+                                <p style="margin-top: 15px; font-size: 12px; opacity: 0.7;">
+We look forward to welcoming you to our creative space! 
+                                </p>
+                    
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7367.969456178847!2d88.25105139370856!3d22.57967450531124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0279794e981ed3%3A0x630e6d114969cdf!2sAmara%20Customs!5e0!3m2!1sen!2sin!4v1753867231067!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Button</title>
+    <style>
+        /* Floating WhatsApp button styling */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            border-radius: 50%;
+            width:  70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: float 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+            animation: none; /* Stop animation on hover */
+        }
+
+        .whatsapp-btn img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Water drop effect animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Button</title>
+    <style>
+        /* Style for the WhatsApp button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            text-align: center;
+            animation: floating 2s ease-in-out infinite, radar 1.5s ease-in-out infinite;
+            background: none;
+            border: none;
+box-shadow: none;
+        }
+
+        /* Animation for floating effect */
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for radar effect */
+        @keyframes radar {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        /* Style for the WhatsApp icon */
+        .whatsapp-btn img {
+            width: 60px; /* You can adjust the size */
+            height: 60px;
+            background: none;
+            box-shadow: none; /* Remove any shadow on the image */
+            border-radius: 0;
+        }
+
+        /* Style for the text within the button (if needed) */
+        .whatsapp-btn-text {
+            color: white;
+            font-size: 16px;
+            margin-top: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-btn">
+        <a href="https://wa.me/917029637066?text=I'm%20interested%20to%20Customise%20my%20Bottle" target="_blank">
+            <img src="Whatsapp Logo.png" alt="WhatsApp">
+            
+        </a>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+    <!-- SINGLE FOOTER -->
+    <div id="footer">
+        <div class="container">
+            <footer class="glass">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="#" onclick="showPage('designs')">Designs</a>
+                        <a href="#" onclick="showPage('services')">Services</a>
+                        <a href="#" onclick="showPage('contact')">Contact</a>
+                    </div>
+                    <div class="copyright">
+                        &copy; 2025 Amara Customs. All rights reserved. Developed by Amara Customs 
+                        
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+<script src="templatemo-glossy-touch.js"></script>
+<script>
+function filterDesigns(category) {
+    // Get all image boxes
+    const items = document.querySelectorAll('.design-item');
+
+    // Get all buttons and remove "active"
+    const buttons = document.querySelectorAll('.design-filters button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Add "active" to the clicked one
+    event.target.classList.add('active');
+
+    // Loop through every image box
+    items.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+
+        // Show all if 'all' is clicked, otherwise filter
+        if (category === 'all' || itemCategory === category) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+</script>
+
+</body>
+</html>
